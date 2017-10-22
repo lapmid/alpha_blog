@@ -10,16 +10,11 @@
 
   <body>
       <%= render 'layouts/navigation' %>
-      
-      <% flash.each do |name, msg| %>
-        <ul>
-            <li><%= name+"  "+msg %></li>
-        </ul>
-      <% end %>
-    <div class="container">
-      <%= yield %>
-    </div>
-    <%= render 'layouts/footer' %>   
+      <%= render 'shared/flash_messages' %> 
+      <div class="container">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>   
    
   </body>
 </html>

@@ -1,12 +1,12 @@
-<h1>Show</h1>
+<h1>Title : <%= @article.title %></h1>
 
-<p>
-  <%= @article.title %>
-</p>
+<div class="well col-xs-8 ">
+  <%=simple_format(@article.description)  %>
 
-<p>
-  <%= @article.description %>
-</p>
-
-<%= link_to "HOME",articles_path(@article) %>
-<%= link_to "Edit",edit_article_path %>
+<hr>
+ <div class="article_actions">
+     <%= link_to "Edit",edit_article_path, class: "btn btn-primary btn-xs" %>
+     <%= link_to "Delete This Article",article_path(@article),method: :delete,data: {confirm: "Are You Sure To Delete This Article ?"},class: "btn btn-danger btn-xs"  %>
+     <%= link_to "View All Articles",articles_path(@article),  class: "btn btn-success btn-xs" %>
+ </div>
+</div>
